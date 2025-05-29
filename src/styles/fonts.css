@@ -14,13 +14,6 @@
 
 @font-face {
   font-family: 'JetBrainsMono Nerd Font';
-  src: url('/fonts/JetBrainsMono/JetBrainsMonoNerdFont-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'JetBrainsMono Nerd Font';
   src: url('/fonts/JetBrainsMono/JetBrainsMonoNerdFont-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-display: swap;
