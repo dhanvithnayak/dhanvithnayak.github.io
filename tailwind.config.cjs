@@ -14,6 +14,10 @@ module.exports = {
       fontSize: {
         base: '20px',
       },
+      fontFamily: {
+        'jetbrains-mono': ['JetBrainsMono Nerd Font', 'monospace'],
+        'console': ['Classic Console Neue Font', 'monospace'],
+      },
     },
   },
   plugins: [
