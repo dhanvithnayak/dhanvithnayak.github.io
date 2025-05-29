@@ -1,9 +1,12 @@
+@import './fonts.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-nvim-bg text-nvim-fg font-mono;
+  @apply bg-nvim-bg text-nvim-fg;
+  font-family: 'Classic Console Neue Font', 'JetBrainsMono Nerd Font', monospace;
 }
 
 ::-webkit-scrollbar {

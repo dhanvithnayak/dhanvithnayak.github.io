@@ -4,12 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'nvim-bg': '#1c1c1c',
+        'nvim-bg': '#1c1c1f',
         'nvim-fg': '#d0d0d0',
         'nvim-gray': '#4e4e4e',
         'nvim-blue': '#5fafd7',
         'nvim-green': '#87d787',
         'nvim-statusline': '#303030',
+      },
+      fontSize: {
+        base: '20px',
       },
     },
   },
