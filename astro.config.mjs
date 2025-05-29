@@ -5,6 +5,7 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://dhanvithnayak.github.io',
   integrations: [tailwind(), mdx()],
+  output: 'server',
+  adapter: vercel(),
 });
