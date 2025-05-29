@@ -1,0 +1,25 @@
+---
+import contacts from '../data/contacts.json';
+
+const iconModules = import.meta.glob('../../public/icons/*.svg', { as: 'raw', eager: true });
+
+const iconMap = Object.entries(iconModules).reduce((acc, [path, content]) => {
+  const iconName = path.split('/').pop()?.replace('.svg', '');
+  if(iconName) {
+    acc[iconName] = content;
+  }
+  return acc;
+}, {});
+---
+
+<div class="flex flex-row justify-center items-center mx-64">
+  {
+  contacts.map((contact) => (
+    <a href={contact.url || `mailto:${contact.text}`} target={contact.url ? "_blank" : "_self"} class="mx-2">
+      {iconMap[contact.icon] && (
+        <span set:html={iconMap[contact.icon]} />
+      )}
+    </a>
+  ))
+  }
+</div>

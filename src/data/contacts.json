@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Email",
+    "text": "dhanvithnayak@proton.me",
+    "icon": "mail"
+  },
+  {
+    "name": "Linkedin",
+    "url": "https://www.linkedin.com/in/dhanvith-nayak-72a9b9211/",
+    "icon": "linkedin"
+  },
+  {
+    "name": "Github",
+    "url": "https://www.github.com/dhanvithnayak",
+    "icon": "github"
+  },
+  {
+    "name": "Instagram",
+    "url": "https://www.instagram.com/dumb_vith",
+    "icon": "instagram"
+  }
+]
