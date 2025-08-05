@@ -16,7 +16,7 @@ const iconName = path.split('/').pop()?.replace('.svg', '');
 <div class="flex flex-row justify-center items-center mx-64">
   {
   contacts.map((contact) => (
-    <a href={contact.url || `mailto:${contact.text}`} target={contact.url ? "_blank" : "_self"} class="mx-2">
+    <a href={contact.url || `mailto:${contact.text}`} target={contact.url ? "_blank" : "_self"} class="mx-3">
       {iconMap[contact.icon] && (
         <span set:html={iconMap[contact.icon]} />
       )}
