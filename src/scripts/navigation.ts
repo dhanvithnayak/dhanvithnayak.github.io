@@ -81,6 +81,9 @@ function handleCommand(command: string) {
       case 'contact':
         window.location.href = '/contact';
         break;
+      case 'resume':
+        window.location.href = '/resume';
+        break;
       case 'q':
         window.close();
         window.location.href = '/exited';
