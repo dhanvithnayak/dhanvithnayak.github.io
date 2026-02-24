@@ -1,19 +1,19 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog');
-  return blogEntries.map(post => ({
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((post) => ({
     params: { slug: post.slug },
-    props: { post }
+    props: { post },
   }));
 }
 
 const { post } = Astro.props;
 
 if (!post) {
-  return Astro.redirect('/404');
+  return Astro.redirect("/404");
 }
 
 const { Content } = await post.render();
@@ -23,7 +23,7 @@ const { Content } = await post.render();
   <div class="p-100">
     <article class="prose prose-invert max-w-none">
       <h1>{post.data.title}</h1>
-      <div class="font-jetbrains-mono"> <Content /> </div>
+      <div class="font-jetbrains-mono"><Content /></div>
     </article>
   </div>
 </Layout>

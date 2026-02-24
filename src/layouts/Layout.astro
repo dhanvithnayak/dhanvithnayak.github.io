@@ -1,7 +1,7 @@
 ---
-import Sidebar from '../components/Sidebar.astro';
-import StatusBar from '../components/StatusBar.astro';
-import '../styles/global.css';
+import Sidebar from "@/components/Sidebar.astro";
+import StatusBar from "@/components/StatusBar.astro";
+import "@/styles/global.css";
 
 export interface Props {
   title: string;
@@ -10,7 +10,7 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -27,7 +27,7 @@ const { title } = Astro.props;
       </main>
     </div>
     <StatusBar />
-    <script src="../scripts/search.ts"></script>
-    <script src="../scripts/navigation.ts"></script>
+    <script src="@/scripts/search.ts"></script>
+    <script src="@/scripts/navigation.ts"></script>
   </body>
 </html>
