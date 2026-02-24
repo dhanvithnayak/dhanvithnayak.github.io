@@ -68,28 +68,34 @@ function handleEscape() {
   }
 }
 
+function getBasePrefix(): string {
+  const match = window.location.pathname.match(/^\/archive\/[^/]+/);
+  return match ? match[0] : '';
+}
+
 function handleCommand(command: string) {
+  const base = getBasePrefix();
   if (command.startsWith(':')) {
     const cmd = command.slice(1).toLowerCase();
     switch (cmd) {
       case 'blog':
-        window.location.href = '/blog';
+        window.location.href = `${base}/blog`;
         break;
       case 'about':
-        window.location.href = '/about';
+        window.location.href = `${base}/about`;
         break;
       case 'contact':
-        window.location.href = '/contact';
+        window.location.href = `${base}/contact`;
         break;
       case 'resume':
-        window.location.href = '/resume';
+        window.location.href = `${base}/resume`;
         break;
       case 'q':
         window.close();
-        window.location.href = '/exited';
+        window.location.href = `${base}/exited`;
         break;
       case 'h':
-        window.location.href = '/help';
+        window.location.href = `${base}/help`;
         break;
       default:
         console.log('Unknown command:', cmd);
@@ -145,14 +151,17 @@ window.updateStatusBar(undefined, undefined, currentPath === '/' ? 'Landing Page
 
 function navigateUp() {
   const currentPath = window.location.pathname;
-  if (currentPath === '/') return; // Already at root
+  const base = getBasePrefix();
+
+  if (base && (currentPath === base || currentPath === base + '/')) return;
+  if (currentPath === '/') return;
 
   const pathParts = currentPath.split('/').filter(Boolean);
-  if (pathParts.length === 1) {
-    // If only one level deep, go to root
-    window.location.href = '/';
+  const baseParts = base.split('/').filter(Boolean);
+
+  if (pathParts.length <= baseParts.length + 1) {
+    window.location.href = base || '/';
   } else {
-    // Remove the last part of the path
     const newPath = '/' + pathParts.slice(0, -1).join('/');
     window.location.href = newPath;
   }
